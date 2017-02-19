@@ -231,9 +231,13 @@ class TipViewController: UIViewController, UITextFieldDelegate {
         let total = bill + tip
         let partySizeDouble = Double(partySize)
         let share = total/partySizeDouble
-        tipLabel.text = String(format: "$ %.2f", tip)
-        totalLabel.text = String(format: "$ %.2f", total)
-        shareLabel.text = String(format: "$ %.2f", share)
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = NumberFormatter.Style.currency
+        currencyFormatter.locale = NSLocale.current
+        tipLabel.text = currencyFormatter.string(from: NSNumber(value: Double(String(format: "%.2f", tip))!))
+        totalLabel.text = currencyFormatter.string(from: NSNumber(value: Double(String(format: "%.2f", total))!))
+        shareLabel.text = currencyFormatter.string(from: NSNumber(value: Double(String(format: "%.2f", share))!))
     }
     
     func setImages() {
