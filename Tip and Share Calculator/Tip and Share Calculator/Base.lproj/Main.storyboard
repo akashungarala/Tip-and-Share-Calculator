@@ -498,7 +498,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <connections>
                                             <action selector="onEditingChangedBadTipTextField:" destination="fWh-bH-4BF" eventType="editingChanged" id="QNf-z0-9VJ"/>
                                         </connections>
@@ -510,7 +510,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <connections>
                                             <action selector="onEditingChangedNotBadTipTextField:" destination="fWh-bH-4BF" eventType="editingChanged" id="1KP-m5-ONp"/>
                                         </connections>
@@ -522,7 +522,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <connections>
                                             <action selector="onEditingChangedGoodTipTextField:" destination="fWh-bH-4BF" eventType="editingChanged" id="iTu-ZH-dCm"/>
                                         </connections>

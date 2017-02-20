@@ -141,14 +141,14 @@ class TipViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         let defaults = UserDefaults.standard
         let isFirstLaunch = defaults.integer(forKey: "isFirstLaunch")
-        if isFirstLaunch == 0 {
+        if isFirstLaunch != 0 {
             defaults.set(1, forKey: "default_tip")
             defaults.set(5, forKey: "bad_tip")
             defaults.set(12, forKey: "not_bad_tip")
             defaults.set(20, forKey: "good_tip")
             defaults.set(9, forKey: "default_theme")
             defaults.set(1, forKey: "default_party_size")
-            defaults.set(1, forKey: "isFirstLaunch")
+            defaults.set(5, forKey: "isFirstLaunch")
             defaults.synchronize()
             alert("5 % (Bad), 12 % (Not Bad) and 20% (Good) are the defaults set.")
         }
@@ -364,7 +364,9 @@ class TipViewController: UIViewController, UITextFieldDelegate {
         let alert = UIAlertController(title: "Welcome", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
         let action = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
         alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async( execute: {
+            self.present(alert, animated: true, completion: nil)
+        })
     }
     
 }
